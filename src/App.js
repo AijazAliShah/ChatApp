@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Main from './Main';
+import store from './store'
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  const { contacts } = store.getState();
+
+  return (
     <div className="App">
-      <Sidebar />
-      <Main /> 
+      <Sidebar contacts={contacts} />
+      <Main />
     </div>
-    );
-  }
-}
+  );
+};
 
 export default App;
